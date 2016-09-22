@@ -1,0 +1,62 @@
+  .degree {
+            font-family: helvetica;
+            font-size: 70px; 
+            padding: 40px; 
+            color: white; 
+            text-shadow: 3px 3px 3px black;
+  }
+
+   .city {
+            font-family: helvetica;
+            font-size: 20px; 
+            color: white; 
+            text-shadow: 1px 1px 1px black;
+            padding-top: 10px;
+  }
+
+   .weatherStatus {
+            font-family: helvetica;
+            font-size: 40px; 
+            padding: 10px; 
+            color: white; 
+            text-shadow: 2px 2px 2px black;
+            border-bottom: 2px solid white;
+  }
+
+  .minMax {
+            font-family: helvetica;
+            font-size: 15px; 
+            color: white; 
+            text-shadow: 1px 1px 2px black;
+  }
+
+  .clear {
+            background-image: url('clearCat.jpg'); 
+            background-size: 100% 100%;
+  }
+
+ .rain {
+            background-image: url('rainyCat.jpg'); 
+            background-size: 100% 100%;
+  }
+ .sleet {
+            background-image: url('sleetCoatCat.jpg'); 
+            background-size: 100% 100%;
+  }
+ .snow {
+            background-image: url('snowCat.jpg'); 
+            background-size: 100% 100%;
+  }
+ .cloudy {
+            background-image: url('cloudCat.jpg'); 
+            background-size: 100% 100%;
+  }
+ .clearPM {
+            background-image: url('clearNightCat.jpg'); 
+            background-size: 100% 100%;
+  }
+
+ .card {
+    margin:2px;
+    text-align: center;
+}

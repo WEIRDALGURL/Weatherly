@@ -15,135 +15,289 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
+    <script src="https://maps.googleapis.com/maps/api/geocode/json?address=41653&key=AIzaSyC9uhvHVQaLhZRW8ksdWitiwDiuHxuCJ7U"></script>
+    <script src="Weatherly.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Weatherly.css">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">Weatherly</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navbar-form navbar-left">
+                    <div>
+                        <input type="text" id="inputTextZip" placeholder="Input Zip Code" />
+                        <button type="button" id="sendZip">Send</button>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav navbar-right ">
+                    <li><a href="# ">Link</a></li>
+                    <li class="dropdown ">
+                        <a href="# " class="dropdown-toggle glyphicon glyphicon-plus " data-toggle="dropdown " role="button
+                            " aria-haspopup="true " aria-expanded="false "> <span class="caret "></span></a>
+                        <ul class="dropdown-menu ">
+                            <li><a href="# ">Action</a></li>
+                            <li><a href="# ">Another action</a></li>
+                            <li><a href="# ">Something else here</a></li>
+                            <li role="separator " class="divider "></li>
+                            <li><a href="# ">Separated link</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
 </head>
 
 <body>
-    
+
     <!-- First Style -->
-<div class="container">
-        <div class="row">
-            <div class="col-md-4" style="background-image: url('clearCat.jpg'); background-size: 100% 100%; margin:20px; text-align: center;">
-                <div>
-               <h4> Prestonsburg, KY</h4><BR/>
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-3 clear card">
+                <div class="row city">
+                    <p> Prestonsburg, KY</p>
                 </div>
-                <BR/>
-                <h1>75&#8457</h1>
-                <br/>
-                <br/>
-                <h2>Clear</h2>
-                <br/>
-                <br/>
-                <hr/>
-                <br/>
-                75&#8457;            70%                  75&#8457;<Br/><br/>
-                 Min                     Rain                      Max
-                 <br/><br/>
-            </div>
-               <!-- First Style -->
- <div class="container">
-        <div class="row">
-            <div class="col-md-4" style="background-image: url('sleetCoatCat.jpg'); background-size: 100% 100%; margin:20px; text-align: center;">
-                <div>
-               <h4> Prestonsburg, KY</h4><BR/>
+                <div class="row ">
+                    <p class="degree">75&#8457</p>
                 </div>
-                <BR/>
-                <h1>75&#8457</h1>
-                <br/>
-                <br/>
-                <h2>Sleet</h2>
-                <br/>
-                <br/>
-                <hr/>
-                <br/>
-                75&#8457;            70%                  75&#8457;<Br/><br/>
-                 Min                     Rain                      Max
-           <br/><br/>
-            </div>
-                <!-- First Style -->
-
-           <div class="container">
-        <div class="row">
-            <div class="col-md-4" style="background-image: url('rainyCat.jpg'); background-size: 100% 100%; margin:20px; text-align: center;">
-                <div>
-               <h4> Prestonsburg, KY</h4><BR/>
+                <div class="row weatherStatus">
+                    <h2>Clear</h2>
                 </div>
-                <BR/>
-                <h1>75&#8457</h1>
-                <br/>
-                <br/>
-                <h2>Rain</h2>
-                <br/>
-                <br/>
-                <hr/>
-                <br/>
-                <h5 style=>75&#8457;     &nbsp       70%      &nbsp            75&#8457;<Br/><br/>
-                 Min     &nbsp                Rain         &nbsp             Max</h5>
-           <br/><br/>
-            </div>
-                <!-- First Style -->
-<div class="container">
-        <div class="row">
-            <div class="col-md-4" style="background-image: url('cloudCat.jpg'); background-size: 100% 100%; margin:20px; text-align: center;">
-                <div>
-               <h4 class> Prestonsburg, KY</h4><BR/>
+                <div class="row " style="height: 20px"> </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>70% </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
                 </div>
-                <BR/>
-                <h1>75&#8457</h1>
-                <br/>
-                <br/>
-                <h2>Cloudy</h2>
-                <br/>
-                <br/>
-                <hr/>
-                <br/>
-                75&#8457;            70%                  75&#8457;<Br/><br/>
-                 Min                     Rain                      Max
-          <br/><br/>
-            </div>
-                    <!-- First Style -->
-<div class="container">
-        <div class="row">
-            <div class="col-md-4" style="background-image: url('clearNightCat.jpg'); background-size: 100% 100%; margin:20px; text-align: center;">
-                <div>
-               <h4> Prestonsburg, KY</h4><BR/>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>Min </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Rain </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Max </p>
+                    </div>
                 </div>
-                <BR/>
-                <h1>75&#8457</h1>
-                <br/>
-                <br/>
-                <h2>Clear PM</h2>
-                <br/>
-                <br/>
-                <hr/>
-                <br/>
-                75&#8457;            70%                  75&#8457;<Br/><br/>
-                 Min                     Rain                      Max
-         <br/><br/>
             </div>
-                    <!-- First Style -->
-
-                <div class="container">
-        <div class="row">
-            <div class="col-md-4" style="background-image: url('snowCat.jpg'); background-size: 100% 100%; margin:20px; text-align: center;">
-                <div>
-               <h4> Prestonsburg, KY</h4><BR/>
+            <!-- Second Style -->
+            <div class="col-md-3 rain card">
+                <div class="row city">
+                    <p> Prestonsburg, KY</p>
                 </div>
-                <BR/>
-                <h1>75&#8457</h1>
-                <br/>
-                <br/>
-                <h2>Snow</h2>
-                <br/>
-                <br/>
-                <hr/>
-                <br/>
-                75&#8457;            70%                  75&#8457;<Br/><br/>
-                 Min                     Rain                      Max
-           <br/><br/>
+                <div class="row ">
+                    <p class="degree">75&#8457</p>
+                </div>
+                <div class="row weatherStatus">
+                    <h2>Rain</h2>
+                </div>
+                <div class="row " style="height: 20px"> </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>70% </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>Min </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Rain </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Max </p>
+                    </div>
+                </div>
             </div>
+            <!-- Third Style -->
+            <div class="col-md-3 sleet card">
+                <div class="row city">
+                    <p> Prestonsburg, KY</p>
+                </div>
+                <div class="row ">
+                    <p class="degree">75&#8457</p>
+                </div>
+                <div class="row weatherStatus">
+                    <h2>Sleet</h2>
+                </div>
+                <div class="row " style="height: 20px"> </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>70% </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>Min </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Rain </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Max </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+        <!-- Fourth Style -->
+        <div class="row ">
+            <div class="col-md-3 clearPM card">
+                <div class="row city">
+                    <p> Prestonsburg, KY</p>
+                </div>
+                <div class="row ">
+                    <p class="degree">75&#8457</p>
+                </div>
+                <div class="row weatherStatus">
+                    <h2>Clear</h2>
+                </div>
+                <div class="row " style="height: 20px"> </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>70% </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>Min </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Rain </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Max </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fifth Style -->
+            <div class="col-md-3 snow card">
+                <div class="row city">
+                    <p> Prestonsburg, KY</p>
+                </div>
+                <div class="row ">
+                    <p class="degree">75&#8457</p>
+                </div>
+                <div class="row weatherStatus">
+                    <h2>Snow</h2>
+                </div>
+                <div class="row " style="height: 20px"> </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>70% </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>Min </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Rain </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Max </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sixth Style -->
+            <div class="col-md-3 cloudy card">
+                <div class="row city">
+                    <p> Prestonsburg, KY</p>
+                </div>
+                <div class="row ">
+                    <p class="degree">75&#8457</p>
+                </div>
+                <div class="row weatherStatus">
+                    <h2>Cloudy</h2>
+                </div>
+                <div class="row " style="height: 20px"> </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>70% </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>75&#8457; </p>
+                    </div>
+                </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <p>Min </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Rain </p>
+                    </div>
+                    <div class="col-md-4 ">
+                        <p>Max </p>
+                    </div>
+                </div>
+            </div>
 
-</html>
+        </div>
+    </div>
