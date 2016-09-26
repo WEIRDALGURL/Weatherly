@@ -1,20 +1,31 @@
-
+var locationName;
 
 function lookupLatLong_Complete(result) {
             var latitude = result.results[0].geometry.location.lat;
             var longitude = result.results[0].geometry.location.lng;
+            locationName = result.results[0].address_components[1].long_name+","+
+                               result.results[0].address_components[2].short_name;               
             console.log("The lat and long is " + latitude + ", " + longitude);
+            console.log("The location is " + locationName);
             getWeather(latitude, longitude);
         }
 
 function getWeather_Complete(result) {
-    var temperature = result.currently.temperature;
-    var summary = result.currently.summary;
-    var rainChance = result.currently.precipProbability;
-    var icon = result.currently.icon;
-    console.log("This is the weather info " + temperature+ "," + summary+ "," +rainChance+ "," +icon)
+    var data = {
+    temperature : (result.currently.temperature),
+    summary : (result.currently.summary),
+    rainChance : (result.currently.precipProbability),
+    icon : (result.currently.icon),
+    minTemp : (result.daily.data[0].temperatureMin),
+    maxTemp : (result.daily.data[0].temperatureMax),
 
-}        
+};
+    console.log("This is the weather info " + temperature+ "," + summary+ "," +rainChance+ "," +icon+ ","+minTemp+ "," +maxTemp);
+
+postCard(data);
+
+
+}
 
 function getWeather(latitude, longitude){
             var DarkskyUrl = "https://api.darksky.net/forecast/cbd31f8cd1b7e93ea299715eddb44f5e/" +latitude+ "," +longitude+"";
@@ -31,7 +42,6 @@ function getWeather(latitude, longitude){
 
 
         function lookupLatLong(city, state, inputTextZip) {
-            // Create the address.
             var address = "";
             if (inputTextZip.length != 0) {
                 address = inputTextZip.trim();
@@ -60,5 +70,7 @@ function getWeather(latitude, longitude){
         }
 
         $(function() {
-            $("#sendZip").on("click", lookupWeatherForPostalCode_Click)
+            $("#sendZip").on("click", lookupWeatherForPostalCode_Click);
+           $("#sendZip").on("click", postCard);
+
         });

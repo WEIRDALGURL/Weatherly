@@ -28,35 +28,41 @@
             font-size: 15px; 
             color: white; 
             text-shadow: 1px 1px 2px black;
+            text-align: center;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 10px;
   }
 
   .clear {
-            background-image: url('clearCat.jpg'); 
+            background-image: url('Images/clearCat.jpg'); 
             background-size: 100% 100%;
   }
 
  .rain {
-            background-image: url('rainyCat.jpg'); 
+            background-image: url('Images/rainyCat.jpg'); 
             background-size: 100% 100%;
   }
  .sleet {
-            background-image: url('sleetCoatCat.jpg'); 
+            background-image: url('Images/sleetCoatCat.jpg'); 
             background-size: 100% 100%;
   }
  .snow {
-            background-image: url('snowCat.jpg'); 
+            background-image: url('Images/snowCat.jpg'); 
             background-size: 100% 100%;
   }
  .cloudy {
-            background-image: url('cloudCat.jpg'); 
+            background-image: url('Images/cloudCat.jpg'); 
             background-size: 100% 100%;
   }
  .clearPM {
-            background-image: url('clearNightCat.jpg'); 
+            background-image: url('Images/clearNightCat.jpg'); 
             background-size: 100% 100%;
   }
 
  .card {
     margin:2px;
     text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
 }
