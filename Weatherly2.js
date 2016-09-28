@@ -1,5 +1,3 @@
-
-
 var loc;
 var temp;
 var summary;
@@ -21,31 +19,38 @@ function lookupLatLong_Complete(result) {
 }
 
 function getWeather_Complete(result) {
-    var data = {
-        temp: result.currently.temperature,
-        summary: result.currently.summary,
-        rainChance: result.currently.precipProbability,
-        icon: result.currently.icon,
-        minTemp: result.daily.data[0].temperatureMin,
-        maxTemp: result.daily.data[0].temperatureMax,
+    var weather = {}      
+        weather.loc = locationName,
+        weather.temp = Math.round(result.currently.temperature),
+        weather.summary = result.currently.summary,
+        weather.rainChance = result.currently.precipProbability,
+        weather.icon = result.currently.icon,
+        weather.minTemp = Math.round(result.daily.data[0].temperatureMin),
+        weather.maxTemp = Math.round(result.daily.data[0].temperatureMax),
+        update(weather);
+    
+    console.log("This is the weather info " +weather.temp+ "," + weather.summary + "," + weather.rainChance + "," + weather.icon + "," + weather.minTemp + "," + weather.maxTemp);
     }
-    console.log("This is the weather info " +data.temp+ "," + data.summary + "," + data.rainChance + "," + data.icon + "," + data.minTemp + "," + data.maxTemp);
+    // }
 
-};
+
+
+
+// };
 
 
 function getWeather(latitude, longitude) {
     var DarkskyUrl = "https://api.darksky.net/forecast/cbd31f8cd1b7e93ea299715eddb44f5e/" + latitude + "," + longitude + "";
 
-    var weather = {
+    var weatherInfo = {
         url: DarkskyUrl,
         dataType: "jsonp",
         success: getWeather_Complete,
 
-
     };
 
-    $.ajax(weather);
+
+    $.ajax(weatherInfo);
 }
 function lookupLatLong(city, state, inputTextZip) {
     var address = "";
@@ -83,11 +88,12 @@ $(function () {
 
 function update(weather) {
     loc.innerHTML = weather.loc;
-    temp.innerHTML = weather.temp.val(data.temp);
+    temp.innerHTML = weather.temp;
     summary.innerHTML = weather.summary;
     minTemp.innerHTML = weather.minTemp;
     rainChance.innerHTML = weather.rainChance;
     maxTemp.innerHTML = weather.maxTemp;
+    icon.src = "Images/" + weather.icon + ".jpg";
 }
 
 $(function () {
@@ -97,16 +103,7 @@ $(function () {
     minTemp = document.getElementById("mintemp");
     rainChance = document.getElementById("precipitation");
     maxTemp = document.getElementById("maxtemp");
+    icon = document.getElementById("icon");
 
-
-    // var weather = {};
-    // weather.loc = "Prestonsburg, Ky";
-    // weather.temp = "87";
-    // weather.summary = "Rainy";
-    // weather.minTemp = "56";
-    // weather.rainChance = "27";
-    // weather.maxTemp = "72";
-
-    // update(weather);
 
 });

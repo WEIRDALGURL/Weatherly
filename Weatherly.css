@@ -35,28 +35,28 @@
   }
 
   .clear {
-            background-image: url('Images/clearCat.jpg'); 
+            background-image: url('Images/clear-day.jpg'); 
             background-size: 100% 100%;
   }
 
  .rain {
-            background-image: url('Images/rainyCat.jpg'); 
+            background-image: url('Images/rain.jpg'); 
             background-size: 100% 100%;
   }
  .sleet {
-            background-image: url('Images/sleetCoatCat.jpg'); 
+            background-image: url('Images/sleet.jpg'); 
             background-size: 100% 100%;
   }
  .snow {
-            background-image: url('Images/snowCat.jpg'); 
+            background-image: url('Images/snow.jpg'); 
             background-size: 100% 100%;
   }
  .cloudy {
-            background-image: url('Images/cloudCat.jpg'); 
+            background-image: url('Images/cloudy.jpg'); 
             background-size: 100% 100%;
   }
  .clearPM {
-            background-image: url('Images/clearNightCat.jpg'); 
+            background-image: url('Images/clear-night.jpg'); 
             background-size: 100% 100%;
   }
 
