@@ -17,7 +17,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/geocode/json?address=41653&key=AIzaSyC9uhvHVQaLhZRW8ksdWitiwDiuHxuCJ7U"></script>
 
-    <script type="text/javascript" src="Weatherly.js"></script>
+    <script type="text/javascript" src="Weatherly2.js"></script>
 
     <link rel="stylesheet" type="text/css" href="Weatherly.css">
 
@@ -43,7 +43,7 @@
                 <div class="navbar-form navbar-left">
                     <div>
                         <input type="text" id="inputTextZip" placeholder="Input Address" />
-                        <button type="button" id="sendZip">Send</button>
+                        <button type="button" onclick="generateCard()" id="sendZip">Send</button>
                     </div>
                 </div>
                 <ul class="nav navbar-nav navbar-right ">
@@ -71,7 +71,7 @@
 
 <body>
     <div class="container">
-        <div class="row" id="cards">
+        <div class="row" id="NewCard">
         </div>
     </div>
 
@@ -127,20 +127,17 @@
         function generateCard(data) {
             var template = $("#templateDiv").html();
 
-            template = template.replace("@CityState@", data.locationName);
-            template = template.replace("@currentTemp@", data.temperature);
-            template = template.replace("@weatherSummary@", data.summary);
-            template = template.replace("@minTemp@", data.minTemp);
-            template = template.replace("@rainProb@", data.rainChance);
-            template = template.replace("@maxTemp@", data.maxTemp);
-
+            template = template.replace("@CityState@", weather.loc);
+            template = template.replace("@currentTemp@", weather.temp);
+            template = template.replace("@weatherSummary@", weather.summary);
+            template = template.replace("@minTemp@", weather.minTemp);
+            template = template.replace("@rainProb@", weather.rainChance);
+            template = template.replace("@maxTemp@", weather.maxTemp);
             return template;
-        }
 
-function postCard(template) {
     var html = generateCard(template);
     $("#newCard").append(html);
-}
+        }
 //var data = {
    // temperature : (result.currently.temperature),
    // summary : (result.currently.summary),

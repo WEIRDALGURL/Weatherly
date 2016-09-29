@@ -8,6 +8,7 @@ var icon;
 var time;
 var locationName;
 
+
 function lookupLatLong_Complete(result) {
     var latitude = result.results[0].geometry.location.lat;
     var longitude = result.results[0].geometry.location.lng;
@@ -23,17 +24,20 @@ function getWeather_Complete(result) {
         weather.loc = locationName,
         weather.temp = Math.round(result.currently.temperature),
         weather.summary = result.currently.summary,
-        weather.rainChance = result.currently.precipProbability,
+        weather.rainChance = percent(result.currently.precipProbability),
         weather.icon = result.currently.icon,
         weather.minTemp = Math.round(result.daily.data[0].temperatureMin),
         weather.maxTemp = Math.round(result.daily.data[0].temperatureMax),
+
         update(weather);
     
     console.log("This is the weather info " +weather.temp+ "," + weather.summary + "," + weather.rainChance + "," + weather.icon + "," + weather.minTemp + "," + weather.maxTemp);
     }
     // }
 
-
+function percent(p){
+    return p*100;
+}
 
 
 // };
@@ -94,6 +98,7 @@ function update(weather) {
     rainChance.innerHTML = weather.rainChance;
     maxTemp.innerHTML = weather.maxTemp;
     icon.src = "Images/" + weather.icon + ".jpg";
+
 }
 
 $(function () {

@@ -17,10 +17,10 @@
 
     <script src="https://maps.googleapis.com/maps/api/geocode/json?address=41653&key=AIzaSyC9uhvHVQaLhZRW8ksdWitiwDiuHxuCJ7U"></script>
 
-  <script src="Weatherly2.js"></script>
+    <script src="Weatherly2.js"></script>
 
 
-   <link rel="stylesheet" type="text/css" href="Weatherly.css">
+    <link rel="stylesheet" type="text/css" href="Weatherly.css">
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -72,8 +72,11 @@
 
     <!-- First Style -->
     <div class="container ">
+        <div class="images">
+            <img id="icon" src="Images/clear-day.jpg" />
+        </div>
         <div class="row ">
-            <div class="col-md-3 icon card">
+            <div class="col-md-3 card">
                 <div class="row city">
                     <span id="location">Unknown, NA</span>
                 </div>
@@ -83,6 +86,7 @@
                 <div class="row weatherStatus">
                     <span id="summary">Unknown</span>
                 </div>
+                <div class="line"></div>
                 <div class="row " style="height: 20px"> </div>
                 <div class="row minMax">
                     <div class="col-md-4 ">
@@ -92,7 +96,7 @@
                         <span id="precipitation">0</span>%<br/><span>Rain</span>
                     </div>
                     <div class="col-md-4 ">
-                        <span id= "maxtemp">0</span>&#8457;<br/><span>Max</span>
+                        <span id="maxtemp">0</span>&#8457;<br/><span>Max</span>
                     </div>
                 </div>
             </div>

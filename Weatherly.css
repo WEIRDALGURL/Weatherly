@@ -20,7 +20,12 @@
             padding: 10px; 
             color: white; 
             text-shadow: 2px 2px 2px black;
+            
+  }
+  .line {
             border-bottom: 2px solid white;
+            max-width: 80%;
+            margin-left: 22px;
   }
 
   .minMax {
@@ -33,6 +38,15 @@
             padding-top: 20px;
             padding-bottom: 10px;
   }
+
+ .images img{ 
+           position:absolute;
+           width: 290px;
+           border-radius: 10px;
+           margin-left: -12px;
+           margin-top: 2px;
+}
+
 
   .clear {
             background-image: url('Images/clear-day.jpg'); 
@@ -64,5 +78,6 @@
     margin:2px;
     text-align: center;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 5px solid beige;
+    height: 435px;
 }
