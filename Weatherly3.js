@@ -1,3 +1,4 @@
+var idNum = 0;
 var loc;
 var temp;
 var summary;
@@ -7,7 +8,6 @@ var maxTemp;
 var icon;
 var time;
 var locationName;
-
 
 function lookupLatLong_Complete(result) {
     var latitude = result.results[0].geometry.location.lat;
@@ -32,19 +32,29 @@ function getWeather_Complete(result) {
         update(weather);
 
     console.log("This is the weather info " + weather.temp+ "," + weather.summary + "," + weather.rainChance + "," + weather.icon + "," + weather.minTemp + "," + weather.maxTemp);
-        }  
     // }   
 
 function percent(p){
     return p*100;
 }
 
+  var template = $(".template").html();
+  template = template.replace("@@IDNUM@@", idNum);
+  template = template.replace("@@LOCATION@@", weather.loc);
+  template = template.replace("@@TEMPERATURE@@", weather.temp);
+  template = template.replace("@@SUMMARY@@", weather.summary);
+  template = template.replace("@@MINTEMP@@", weather.minTemp);
+  template = template.replace("@@RAINCHANCE@@", weather.rainChance);
+  template = template.replace("@@MAXTEMP@@", weather.maxTemp);
+  $(".container").append(template);
 
-// };
+       }  
+
+  idNum++;
 
 
 function getWeather(latitude, longitude) {
-    var DarkskyUrl = "https://api.darksky.net/forecast/cbd31f8cd1b7e93ea299715eddb44f5e/" + latitude + "," + longitude + "";
+    var DarkskyUrl = "https://api.darksky.net/forecast/cbd31f8cd1b7e93ea299715eddb44f5e/" + latitude + "," + longitude;
 
     var weatherInfo = {
         url: DarkskyUrl,
@@ -52,14 +62,13 @@ function getWeather(latitude, longitude) {
         success: getWeather_Complete,
 
     };
-
-
-    $.ajax(weatherInfo);
+$.ajax(weatherInfo);
 }
-function lookupLatLong(city, state, inputTextZip) {
+
+function lookupLatLong(city, state, zipcode) {
     var address = "";
-    if (inputTextZip.length != 0) {
-        address = inputTextZip.trim();
+    if (zipcode.length != 0) {
+        address = zipcode.trim();
     }
     else if (city.length != 0 && state != 0) {
         address = city.trim() + ", " + state;
@@ -69,14 +78,10 @@ function lookupLatLong(city, state, inputTextZip) {
     }
 
     var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyAQsMF6GQMAD_JlBLibE1ZprVVwxK0kfac";
-
-    var request = {
+    $.ajax({
         url: googleUrl,
         success: lookupLatLong_Complete
-    };
-
-    $.ajax(request);
-
+    });
 }
 
 
@@ -89,8 +94,7 @@ $(function () {
     $("#sendZip").on("click", lookupWeatherForPostalCode_Click);
 
 });
-
-function update(weather) {
+  function update(weather) {
     loc.innerHTML = weather.loc;
     temp.innerHTML = weather.temp;
     summary.innerHTML = weather.summary;
