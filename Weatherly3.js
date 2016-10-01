@@ -92,6 +92,9 @@ function lookupWeatherForPostalCode_Click() {
 
 $(function () {
     $("#sendZip").on("click", lookupWeatherForPostalCode_Click);
+    $(document).on('click', '.closeBtn', function () {
+        $(this).closest('.card').remove();
+    });
 
 });
   function update(weather) {

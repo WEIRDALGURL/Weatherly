@@ -41,35 +41,37 @@
 
     <div class="container">
         <div class="template" hidden>
+            <!--<div class="row ">-->
+            <div class="col-md-3 card" id="myDiv@@IDNUM@@">
             <div class="images">
                 <img id="icon" src="Images/unknown.jpg" />
             </div>
-            <div class="row ">
-                <div class="col-md-3 card" id="myDiv@@IDNUM@@">>
-                    <div class="row city">
-                        <span id="location">@@LOCATION@@</span>
+                <div class="closeBtn" id="closeBtn@@CLOSENUM@@">x</div>
+
+                <div class="row city">
+                    <span id="location">@@LOCATION@@</span>
+                </div>
+                <div class="row degree">
+                    <span id="temp">@@TEMPERATURE@@</span><span>&#8457</span>
+                </div>
+                <div class="row weatherStatus">
+                    <span id="summary">@@SUMMARY@@</span>
+                </div>
+                <div class="line"></div>
+                <div class="row " style="height: 20px"> </div>
+                <div class="row minMax">
+                    <div class="col-md-4 ">
+                        <span id="mintemp">@@MINTEMP@@</span>&#8457;<br/><span>Min</span>
                     </div>
-                    <div class="row degree">
-                        <span id="temp">@@TEMPERATURE@@</span><span>&#8457</span>
+                    <div class="col-md-4 ">
+                        <span id="precipitation">@@RAINCHANCE@@</span>%<br/><span>Rain</span>
                     </div>
-                    <div class="row weatherStatus">
-                        <span id="summary">@@SUMMARY@@</span>
-                    </div>
-                    <div class="line"></div>
-                    <div class="row " style="height: 20px"> </div>
-                    <div class="row minMax">
-                        <div class="col-md-4 ">
-                            <span id="mintemp">@@MINTEMP@@</span>&#8457;<br/><span>Min</span>
-                        </div>
-                        <div class="col-md-4 ">
-                            <span id="precipitation">@@RAINCHANCE@@</span>%<br/><span>Rain</span>
-                        </div>
-                        <div class="col-md-4 ">
-                            <span id="maxtemp">@@MAXTEMP@@</span>&#8457;<br/><span>Max</span>
-                        </div>
+                    <div class="col-md-4 ">
+                        <span id="maxtemp">@@MAXTEMP@@</span>&#8457;<br/><span>Max</span>
                     </div>
                 </div>
             </div>
+            <!--</div>-->
         </div>
     </div>
 </body>
